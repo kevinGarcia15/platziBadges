@@ -25,7 +25,7 @@ export class Badges extends Component {
         console.log('component did mount')
        this.fetchData()     
     }
-
+/**Esta es la forma de hacer una peticion get a una API */
     fetchData = async()=>{
         this.setState({loading:true, error:null})
         try {

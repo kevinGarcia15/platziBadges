@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../pages/styles/BadgesList.css";
 import {Link} from 'react-router-dom' 
+import Gravatar from "./Gravatar";
 
 
 export class BadgesList extends Component {
@@ -19,11 +20,7 @@ export class BadgesList extends Component {
         {this.props.badges.map((badge) => {
           return (
             <li key={badge.id} className="BadgesListItem">
-              <img
-                className="BadgesListItem__avatar"
-                src={badge.avatarUrl}
-                alt="porfile"
-              />
+              <Gravatar className={'BadgesListItem__avatar'} email={badge.email}/>
               <div>
                 <p>
                   <strong>
