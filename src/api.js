@@ -28,12 +28,12 @@ const api = {
         return callApi('/badges');
     },
     create(badge) {
-      throw new Error('Error 500 Internal Server ERROR')
+//      throw new Error('Error 500 Internal Server ERROR')
 
-/*       return callApi(`/badges`, {
+      return callApi(`/badges`, {
         method: 'POST',
         body: JSON.stringify(badge),
-      });*/ 
+      }); 
      },
     read(badgeId) {
       return callApi(`/badges/${badgeId}`);
