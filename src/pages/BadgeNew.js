@@ -4,9 +4,12 @@ import "./styles/BadgeNew.css";
 import Badge from "../components/Badge";
 import BadgeForm from "../components/BadgeForm";
 import api from "../api";
+import PageLoadingCircle from "../components/PageLoadingCircle"
 
 class BadgeNew extends React.Component {
   state = {
+    loading:false,
+    error: null, 
     form: {
       firstName: "",
       lastName: "",
@@ -31,12 +34,16 @@ class BadgeNew extends React.Component {
 
     try {
       await api.badges.create(this.state.form);
-      this.setState({ loading: true });
+      this.setState({ loading: false });
     } catch (error) {
       this.setState({ loading: false, error: error });
     }
   };
   render() {
+    if (this.state.loading) {
+      return <PageLoadingCircle/>
+    }
+
     return (
       <React.Fragment>
         <div className="BadgeNew__hero">
@@ -60,6 +67,7 @@ class BadgeNew extends React.Component {
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}
                 formValues={this.state.form}
+                error = {this.state.error}
               />
             </div>
           </div>
