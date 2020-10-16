@@ -23,7 +23,8 @@ export class Badges extends Component {
 
     componentDidMount(){
         console.log('component did mount')
-       this.fetchData()     
+       this.fetchData()
+//       setInterval(this.fetchData, 5000)     
     }
 /**Esta es la forma de hacer una peticion get a una API */
     fetchData = async()=>{
