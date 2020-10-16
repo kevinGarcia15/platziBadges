@@ -1,44 +1,14 @@
-import React, { Component } from "react";
-import "./styles/BadgeDetails.css";
-import confLogo from "../images/platziconf-logo.svg";
-import PageLoading from "../components/PageLoadingCircle";
-import PageError from "../components/PageError";
-import api from "../api";
-import Badge from "../components/Badge";
+import React from 'react'
 import { Link } from "react-router-dom";
 
-export class BadgeDetails extends Component {
-  state = {
-    loading: true,
-    error: null,
-    data: undefined,
-  };
+import Badge from "../components/Badge";
 
-  componentDidMount() {
-    this.fetchData();
-  }
+import confLogo from "../images/platziconf-logo.svg";
 
-  fetchData = async () => {
-    this.setState({ loading: true, error: null });
-    try {
-      const data = await api.badges.read(this.props.match.params.badgeId);
-      this.setState({ loading: false, data: data });
-    } catch (error) {
-      this.setState({ loading: false, error });
-    }
-  };
-  render() {
-    if (this.state.loading) {
-      return <PageLoading />;
-    }
-
-    if (this.state.error) {
-      return <PageError error={this.state.error} />;
-    }
-
-    const badge = this.state.data;
+function BadgeDetails(props) {
+    const badge = props.badge
     return (
-      <div>
+        <div>
         <div className="div BadgeDetails__hero">
           <div className="container">
             <div className="row">
@@ -76,8 +46,8 @@ export class BadgeDetails extends Component {
             </div>
         </div>
       </div>
-    );
-  }
+
+    )
 }
 
-export default BadgeDetails;
+export default BadgeDetails
