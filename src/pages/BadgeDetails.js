@@ -6,7 +6,18 @@ import DeleteBadgeModal from "../components/DeleteBadgeModal";
 
 import confLogo from "../images/platziconf-logo.svg";
 
+
+function useCounter(max){
+  const [count, setCount] = React.useState(0)
+
+  if (count > max) {
+    setCount(0)
+  }
+  return [count, setCount]
+}
+
 function BadgeDetails(props) {
+  const [count, setCount] = useCounter(5);
   const badge = props.badge;
   return (
     <div>
@@ -38,6 +49,14 @@ function BadgeDetails(props) {
           <div className="col">
             <h2>Actions</h2>
             <div>
+              <button
+                className="btn btn-success mr-4"
+                onClick={() => {
+                  setCount(count + 1);
+                }}
+              >
+                count : {count}
+              </button>
               <Link
                 className="btn btn-primary mb-4"
                 to={`/badges/${badge.id}/edit`}
