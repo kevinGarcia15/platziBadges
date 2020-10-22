@@ -1,15 +1,6 @@
 {
   "badges": [
     {
-      "id": "2de30c42-9deb-40fc-a41f-05e62b5939a7",
-      "firstName": "Amsterdam",
-      "lastName": "Grady",
-      "email": "Leann_Berge@gmail.com",
-      "jobTitle": "Legacy Brand Director",
-      "twitter": "AmsterdamGrady22221-7573",
-      "avatarUrl": "https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782a6b1dff40b?d=identicon"
-    },
-    {
       "id": "d00d3614-101a-44ca-b6c2-0be075aeed3d",
       "firstName": "Major",
       "lastName": "Rodriguez",
@@ -480,14 +471,6 @@
       "jobTitle": "Carnicero",
       "twitter": "jcarpo",
       "id": "SMFG_u4"
-    },
-    {
-      "firstName": "Prueva",
-      "lastName": "prueba",
-      "email": "prueva@gmail.com",
-      "jobTitle": "prueba",
-      "twitter": "prueba",
-      "id": "qyDNCJV"
     },
     {
       "firstName": "kevin",
