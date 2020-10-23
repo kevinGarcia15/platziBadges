@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 export class Home extends Component {
   render() {
     return (
-      <div className="Home">
-        <div className="Home__col m-5">
-          <img src={conf} alt="PlatziConf-logo" />
+      <div className="Home row">
+        <div className="Home__col m-5 col-12 col-sm-12 col-lg-3">
+          <img className='img-fluid' src={conf} alt="PlatziConf-logo" />
           <br />
           <h1>PRINT YOUR BADGES</h1>
           <p>
@@ -20,8 +20,8 @@ export class Home extends Component {
             Start now
           </Link>
         </div>
-        <div className="Home__col m-5">
-          <img src={astronauts} alt="astonauts" />
+        <div className="Home__col m-5 col-12 col-sm-12 col-lg-7">
+          <img className='img-fluid' src={astronauts} alt="astonauts" />
         </div>
       </div>
     );
